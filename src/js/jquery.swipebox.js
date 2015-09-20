@@ -97,7 +97,7 @@
 					// Allow for HTML5 compliant attribute before legacy use of rel
 					if ( ! relVal ) {
 						relType = 'data-rel';
-						relVal  = $( this ).attr( relType );
+						relVal	= $( this ).attr( relType );
 					}
 
 					if ( ! relVal ) {
@@ -790,7 +790,7 @@
 						'portrait' : '0',
 						'color': plugin.settings.vimeoColor
 					});
-					iframe = '<iframe width="560" height="315"  src="//player.vimeo.com/video/' + vimeoUrl[1] + '?' + qs + '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
+					iframe = '<iframe width="560" height="315"	src="//player.vimeo.com/video/' + vimeoUrl[1] + '?' + qs + '" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>';
 
 				} else {
 					iframe = '<iframe width="560" height="315" src="' + url + '" frameborder="0" allowfullscreen></iframe>';
@@ -803,29 +803,29 @@
 			 * Load image
 			 */
 			loadMedia : function ( src, callback ) {
-                // Inline content
-                if ( src.trim().indexOf('#') === 0 ) {
-                    callback.call(
-                    	$('<div>', {
-                    		'class' : 'swipebox-inline-container'
-                    	})
-                    	.append(
-                    		$(src)
-	                    	.clone()
-	                    	.toggleClass( plugin.settings.toggleClassOnLoad )
-	                    )
-                    );
-                }
-                // Everything else
-                else {
-    				if ( ! this.isVideo( src ) ) {
-    					var img = $( '<img>' ).on( 'load', function() {
-    						callback.call( img );
-    					} );
+				// Inline content
+				if ( src.trim().indexOf('#') === 0 ) {
+					callback.call(
+						$('<div>', {
+							'class' : 'swipebox-inline-container'
+						})
+						.append(
+							$(src)
+							.clone()
+							.toggleClass( plugin.settings.toggleClassOnLoad )
+						)
+					);
+				}
+				// Everything else
+				else {
+					if ( ! this.isVideo( src ) ) {
+						var img = $( '<img>' ).on( 'load', function() {
+							callback.call( img );
+						} );
 
-    					img.attr( 'src', src );
-    				}
-                }
+						img.attr( 'src', src );
+					}
+				}
 			},
 
 			/**
