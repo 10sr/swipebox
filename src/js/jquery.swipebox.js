@@ -819,11 +819,15 @@
 				// Everything else
 				else {
 					if ( ! this.isVideo( src ) ) {
+						var anchor = $( '<a>', {
+							href: src
+						});
 						var img = $( '<img>' ).on( 'load', function() {
-							callback.call( img );
+							callback.call( anchor );
 						} );
 
 						img.attr( 'src', src );
+						anchor.append(img);
 					}
 				}
 			},
