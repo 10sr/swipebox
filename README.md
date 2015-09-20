@@ -1,9 +1,13 @@
-Swipebox
+Swipebox [10sr mod]
 ================================
 
 A touchable jQuery lightbox.
 
-[View project page](http://brutaldesign.github.com/swipebox)
+[View project page](http://10sr.github.com/swipebox)
+
+##10sr mod
+
+- Make each slideshow image a link for itself
 
 ##What is Swipebox ?
 
